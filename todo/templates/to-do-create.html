@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/to-do.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Create To-Do</title>
+{% endblock %}
+{% block content %}
+    <main>
+            <div class="containers-block-to-do">
+                <div class="container-reviews">
+                    <div class="button-to-do">
+                        <a href="{% url 'todo:todomain' %}" type="button" id="button-all">All To-Do</a>
+                        <a href="{% url 'todo:notecartprivate' username=request.user.username %}" type="button" id="button-your" style="cursor: pointer;">Your To-Do</a>
+                    </div>
+                    <p class="text-top">Create To - Do</p>
+                    <div class="line"></div>
+                    <div class="card-to-do-user">
+
+                        <div class="container-reviews-to-do" style="width: 700px; height: 600px;">
+                            <form action="{% url 'todo:createtodo' %}" method="post">
+                                {% csrf_token %}
+                                <div class="name-input" style="margin-left: 25%;">
+                                    <label for="id_name" class="form-label"  id="id_name" style="margin-top: 10%; font-size: 46px; margin-left: 15%;">Name list</label>
+                                    <input type="text" class="form-control" style="width: 250px; height: 50px;" name="name" id="id_name" placeholder="Input name list" required>
+                                </div>
+
+                                <div class="lastname-input" style="margin-left: 25%; margin-top: 10%;">
+                                    <label for="id_descrtiption" class="form-label"  id="id_description" style="margin-left: 10%; font-size: 46px; margin-left: 13%;">Description</label>
+                                    <textarea class="form-control" id="id_description" name="description" placeholder="Input description" style="width: 250px; height: 100px;" required></textarea>
+                                </div>
+                                <input type="radio" id="private" name="privacy" value="private" style="margin-left: 30%;">
+                                <label for="private" style="font-family: 'Beer Money', sans-serif; font-size: 26px; color: #437cf8;">private</label>
+
+                                <input type="radio" id="open" name="privacy" value="open" style="margin-left: 10%;">
+                                <label for="open" style="font-family: 'Beer Money', sans-serif; font-size: 26px; color: #437cf8;">open</label>
+                                <div class="button-to-do">
+                                    <button type="submit" class="button-link-log" style="margin-left: 45%;">Save</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </main>
+{% endblock %}

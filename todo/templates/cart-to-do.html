@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/to-do.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Cart To-Do</title>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container-reviews-to-do" style="width: 700px; height: 700px; margin-left: 30%; margin-top: 5%;">
+            {% if note.user.image %}
+                <div class="photo-reviews-to-do">
+                    <img  src="{{ note.user.image.url }}" class="avatar" alt="User Avatar">
+                </div>
+            {% else %}
+                <div class="photo-reviews-to-do">
+                    <img src="{% static 'main/images/baseavatar.jpg' %}" class="avatar" alt="User Avatar">
+                </div>
+            {% endif %}
+            <div class="name-to-do">{{ note.user.name }}</div>
+            <div class="name-to-do">{{ note.user.username }}
+                {% if request.user == note.user %}
+                    <a href="#" class="button-delete" type="button" id="button-your" style="cursor: pointer; margin-left: 45%;">Delete</a>
+                {% endif %}
+            </div>
+            <div class="line-to-do"></div>
+            <li class="showing-text-to-do" style="font-size: 36px; width: 650px; height: 650px; white-space: normal; text-overflow: unset;">{{ note.description }}</li>
+            <a href="{% url 'todo:todomain' %}">
+                <img src="{% static 'main/icons/icon-left-blue.png' %}" style="width: 48px; height: 48px; margin-top: -35%; margin-left: 3%;">
+            </a>
+        </div>
+
+    </main>
+{% endblock %}

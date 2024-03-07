@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load todo_tags %}
+{% load static %}
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/to-do.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Home - To-Do</title>
+    {% endblock %}
+
+{% block content %}
+    <main>
+        <div class="all-containers">
+            <div class="containers-block-to-do">
+                <div class="container-reviews">
+                    <div class="button-to-do">
+                        <a href="{% url 'todo:todomain' %}" type="button" id="button-all">All To-Do</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'todo:notecartprivate' username=request.user.username %}" type="button" id="button-your" style="cursor: pointer;">Your To-Do</a>
+                        {% else %}
+                            <a href="{% url 'users:registration' %}" type="button" id="button-your" style="cursor: pointer;">Your To-Do</a>
+                        {% endif %}
+
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'todo:createtodo' %}" type="button" id="button-create-to-do" style="cursor: pointer;">Create To Do</a>
+                        {% else %}
+                            <a href="{% url 'todo:createtodo' %}" type="button" id="button-create-to-do" style="cursor: pointer; visibility: hidden;">Create To Do</a>
+                        {% endif %}
+                    </div>
+                    <p class="text-top">List of To-Do users</p>
+                    <div class="line"></div>
+                    <div class="card-to-do-user">
+                        {% for note in notes %}
+                            <div class="container-reviews-to-do">
+                                <a href="{% url 'todo:notecart' note.user.username note.id %}">
+                                    {% if note.user.image %}
+                                        <div class="photo-reviews-to-do">
+                                            <img  src="{{ note.user.image.url }}" class="avatar" alt="User Avatar">
+                                        </div>
+                                    {% else %}
+                                        <div class="photo-reviews-to-do">
+                                             <img src="{% static 'main/images/baseavatar.jpg' %}" class="avatar" alt="User Avatar">
+                                        </div>
+                                    {% endif %}
+                                    <div class="name-to-do">{{ note.user.username }}</div>
+                                    <div class="line-to-do"></div>
+                                    <div class="showing-text-to-do">
+                                        {% autoescape off %}
+                                            {% if note.bodyline %}
+                                                {{ note.bodyline|truncatechars:100 }}
+                                            {% else %}
+                                                {{ note.description|truncatechars:130 }}
+                                            {% endif %}
+                                        {% endautoescape %}
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Пагинация -->
+    {% if notes %}
+        <nav aria-label="Page navigation example" style="margin-top: -4%;margin-left: -2%;">
+            <ul class="pagination justify-content-center my-4">
+                <div class="custom-shadow d-flex">
+                    <li class="page-item {% if not notes.has_previous %} disabled {% endif %}">
+                        <a class="page-link" href="{% if notes.has_previous %}?{% change_params page=notes.previous_page_number %}{% else %} # {% endif %}">Previous</a>
+                    </li>
+                    {% for page in notes.paginator.page_range %}
+                        {% if page >= notes.number|add:-2 and page <= notes.number|add:2 %}
+                            <li class="page-item {% if notes.number == page %} active {% endif %}">
+                                <a class="page-link" href="?{% change_params page=page %}">{{ page }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    <li class="page-item {% if not notes.has_next %} disabled {% endif %}">
+                        <a class="page-link" href="{% if notes.has_next %}?{% change_params page=notes.next_page_number %}{% else %} # {% endif %}">Next</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}

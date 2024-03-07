@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="block-profile">
+             {% if user.is_authenticated %}
+            <h3 class="text-profile-title"style="margin-left: 2%;">User Profile: {{user.username}}
+                <div class="line-profile" style="margin-left: -4.5%;"></div>
+            </h3>
+                <form action="{% url 'user:profile' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="class-row-container">
+                        <div class="avatar-input">
+                            {% if user.image %}
+                                <img src="{{ user.image.url }}"
+                                alt="Аватар пользователя" class="img-fluid rounded-circle"
+                                style="max-width: 150px;">
+                            {% else %}
+                                <img src="{% static 'main/images/baseavatar.jpg' %}"
+                                    alt="Аватар пользователя" class="img-fluid rounded-circle"
+                                    style="max-width: 150px;">
+                            {% endif %}
+                                <label class="input-file">
+                                    <span class="input-file-text">No file selected</span>
+                                    <input type="file" name="image" class="input-file-input" id="id_image" accept="image/*">
+                                    {% if form.image.errors %}
+                                        <div class="alert alert-danger alert-dismissible fade show">{{form.image.errors}}</div>
+                                    {% endif %}
+                                    <span class="input-file-btn">Choose file</span>
+                                </label>
+                        </div>
+
+                        <div class="name-input">
+                            <label for="id_first_name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="first_name"  id="id_first_name"
+                                placeholder="Input your name" value="{{ form.first_name.value }}" required>
+                        </div>
+                        <div class="lastname-input">
+                            <label for="id_last_name" class="form-label">Surname</label>
+                            <input type="text" class="form-control" name="last_name" id="id_last_name"
+                                placeholder="Input your surname" value="{{ form.last_name.value }}" required>
+                        </div>
+                        <div class="username-input">
+                            <label for="id_username" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" id="id_username"
+                                placeholder="Input your username" value="{{ form.username.value }}" required>
+                            {% if form.username.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="email-input">
+                            <label for="id_email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="id_email"
+                                placeholder="Input your email" value="{{ form.email.value }}" required>
+                            {% if form.email.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <button type="submit" class="button-link-log">Save</button>
+                </form>
+            {% endif %}
+        </div>
+    </main>
+    <script src="{% static 'main/js/file-avatar.js' %}"></script>
+{% endblock %}

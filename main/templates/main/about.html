@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/about.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="text-about">
+            <h1>About <span>Us</span></h1>
+            <h2>The blocks contain a brief functionality of the site</h2>
+            <p></p>
+        </div>
+        
+        <div class="all-containers">
+            <div class="container-reviews">
+                <div class="photo-reviews" style="background-image: url('{% static 'main/images/to-do.png' %}')"></div>
+                <div class="name">To-Do</div>
+                <div class="line"></div>
+                <p class="showing-text">You can make your to-do list or share it with others.</p>
+            </div>
+            <div class="container-reviews">
+                <div class="photo-reviews" style="background-image: url('{% static 'main/images/weather.png' %}')"></div>
+                <div class="name">Weather</div>
+                <div class="line"></div>
+                <p class="showing-text">Complete weather forecast for your city in a convenient and beautiful way.</p>
+            </div>
+            <div class="container-reviews">
+                <div class="photo-reviews" style="background-image: url('{% static 'main/images/portfolio.png' %}')"></div>
+                <div class="name">Portfolio</div>
+                <div class="line"></div>
+                <p class="showing-text">Is my portfolio or your portfolio posted on the site, perhaps a designer of your portfolios?...</p>
+            </div>
+        </div>
+        <div class="button-reviews">
+            <a href="https://t.me/qxzxbtlqq" type="button">Question?</a>
+        </div>
+
+    </main>
+{% endblock %}

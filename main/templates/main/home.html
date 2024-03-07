@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/search.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block content %}
+    <main>
+            <form action="" method="get">
+                <div class="search-box">
+                    <input type="text" class="input-search" id="searchInput" placeholder="Type to Search...">
+                    <button id="searchBtn" type="submit" style="cursor: pointer; border: none; background: none;">
+                        <img src="{% static 'main/icons/search-icon.png' %}" alt="Search icon" class="search-icon" style="margin-right: 5px;">
+                    </button>
+                </div>
+                <div id="searchResults"></div>
+            </form>
+    </main>
+    <script src="{% static 'main/js/search.js' %}"></script>
+{% endblock %}

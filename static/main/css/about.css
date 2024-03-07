@@ -1,0 +1,770 @@
+
+body {
+    overflow-x: hidden;
+}
+
+.text-about h1 {
+    font-family: "Teko", sans-serif;
+    font-size: 66px;
+    background: linear-gradient(to right, #2668f5, #477ff8); /* Градиент для h1 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Для WebKit браузеров */ 
+    margin-left: 40%;
+    margin-top: 5%;
+    transition: 1s;
+}
+
+.text-about h1:hover{
+    transform: scale(1.2);
+}
+
+.text-about span {
+    font-family: "Teko", sans-serif;
+    font-size: 66px;
+    background: linear-gradient(to right, #2668f5, #477ff8); /* Градиент для span */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Для WebKit браузеров */
+}
+
+.text-about h2{
+    color: #b7b7b7;
+    font-family: "Teko", sans-serif;
+    font-size: 20px;
+    margin-left: 35%;
+    margin-top: -3%;
+    transition: 1s;
+}
+
+.text-about h2:hover{
+    transform: scale(1.2);
+}
+
+
+#websites-reviews .icons-web {
+    display: flex;
+    justify-content: flex-start; /* Перемещаем иконки в начало контейнера */
+    margin-left: 20%;
+    margin-top: -10%;
+    transition: .5s;
+}
+
+.container-reviews {
+    background-color: rgba(242, 242, 242, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    justify-content: space-around;
+    box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+    margin-top: -5%;
+    margin-left: -10%;
+    transition: 1.5s;
+}
+.container-reviews:hover{
+    transform: scale(1.1);
+}
+
+.all-containers {
+    font-family: 'Beer Money', sans-serif;
+    color: #fff;
+    font-size: 46px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 6%;
+    margin-top:8%;
+}
+
+
+
+.showing-text {
+    font-size: 24px;
+}
+
+.photo-reviews {
+    background: rgba(0, 0, 0, 0.01);
+    width: 66px;
+    height: 65px;
+    border-radius: 50%;
+    margin: 30px auto;
+    opacity: 1;
+    transition: opacity 2s;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+.line {
+    border-bottom: 2px solid #fff;
+    width: 180px;
+    color: #fff;
+    margin-left: 65px;
+}
+
+.showing-text {
+    margin-top: 35px;
+    color: #fff;
+}
+
+.name {
+    font-size: 24px;
+    margin-left: 80px;
+    margin-top: -80px;
+}
+
+
+.button-reviews {
+    margin-left: 46%;
+    margin-top: 11%;
+    transition: 1s;
+}
+
+.button-reviews a {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(242, 242, 242, 0.1);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'Beer Money', sans-serif;
+    box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+}
+
+.button-reviews:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 1045px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 1.7vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 2vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 45%;
+        margin-top: 4%;
+        transition: 1s;
+    }
+}
+
+@media screen and (max-width: 820px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 2.4vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 4vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 45%;
+        margin-top: 4%;
+        transition: 1s;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 30pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 3.4vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 5vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 38%;
+        margin-top: 10%;
+        transition: 1s;
+    }
+    .text-about h2{
+        display: none;
+    }
+    .text-about h1{
+        margin-left: 20%;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 30pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 5vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 6vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 37%;
+        margin-top: 10%;
+        transition: 1s;
+    }
+    .text-about h2{
+        display: none;
+    }
+    .text-about h1{
+        margin-left: 15%;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 30pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 5.5vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 9vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 30%;
+        margin-top: 10%;
+        transition: 1s;
+    }
+    .text-about h2{
+        display: none;
+    }
+    .text-about h1{
+        margin-left: 4%;
+    }
+}
+
+
+@media only screen and (max-width: 820px) and (max-height: 1180px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 2vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 3vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 47%;
+        margin-top: 5%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 25%;
+    }
+    .text-about h1{
+        margin-left: 35%;
+    }
+}
+
+
+@media only screen and (max-width:375px) and (max-height: 667px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 4vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 8vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 38%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 25%;
+    }
+    .text-about h1{
+        margin-left: 20%;
+    }
+
+}
+
+
+@media only screen and (max-width:414px) and (max-height: 896px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 4vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 6.7vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 38%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 25%;
+    }
+    .text-about h1{
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width:430px) and (max-height: 932px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 4vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 6.7vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 38%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 25%;
+    }
+    .text-about h1{
+        margin-left: 20%;
+    }
+
+}
+
+@media only screen and (max-width:1024px) and (max-height: 1366px){
+    .button-reviews {
+        margin-left: 49%;
+        margin-top: 4%;
+        transition: 1s;
+    }
+}
+
+@media only screen and (max-width:932px) and (max-height: 1368px){
+    .button-reviews {
+        margin-left: 48%;
+        margin-top: 4%;
+        transition: 1s;
+    }
+}
+
+
+@media only screen and (max-width:540px) and (max-height: 720px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 3vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 6.7vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 43%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 13%;
+    }
+    .text-about h1{
+        margin-left: 25%;
+    }
+
+}
+
+@media only screen and (max-width:280px) and (max-height: 653px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 6vw; /* Изменяем размер текста для меньших экранов */
+        margin-top: 8vw; /* Изменяем отступ для меньших экранов */
+    }
+
+    .button-reviews {
+        margin-left: 32%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 13%;
+    }
+    .text-about h1{
+        margin-left: 20%;
+    }
+
+    .text-about span {
+        font-family: "Teko", sans-serif;
+        font-size: 66px;
+        background: linear-gradient(to right, #2668f5, #477ff8); /* Градиент для span */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* Для WebKit браузеров */
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width:412px) and (max-height: 914px){
+    .all-containers {
+        font-family: 'Beer Money', sans-serif;
+        color: #fff;
+        font-size: 46px;
+        grid-gap: 50pt;
+        display: grid;
+        justify-content: space-around;
+        margin-left: 6%;
+        margin-top:8%;
+    }
+
+    .container-reviews {
+        background-color: rgba(242, 242, 242, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        width: 150px;
+        height: 150px;
+        justify-content: space-around;
+        box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+        margin-top: -5%;
+        margin-left: -10%;
+        transition: 1.5s;
+    }
+
+    .line {
+        border-bottom: 2px solid #fff;
+        width: 80px;
+        color: #fff;
+        margin-left: 65px;
+    }
+
+    .showing-text {
+        font-size: 4vw;
+        margin-top: 6vw;
+    }
+
+    .button-reviews {
+        margin-left: 38%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+
+    .text-about h2{
+        margin-left: 13%;
+    }
+    .text-about h1{
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width:1280px) and (max-height: 800px){
+    .button-reviews {
+        margin-left: 47%;
+        margin-top: 6%;
+        transition: 1s;
+    }
+}

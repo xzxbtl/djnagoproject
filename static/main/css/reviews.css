@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+}
+
+.block-reviews {
+    flex: 0 0 30%; /* Каждая карточка занимает примерно 30% ширины родительского контейнера, но не растягивается */
+    margin: 0 -40px -100px; /* Расстояние между карточками и отступ снизу */
+    margin-top: 8%;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.review {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+.review:hover{
+    transform: scale(1.1);
+}
+
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.username {
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    font-size: 26px;
+    font-family: 'Beer Money', sans-serif;
+    margin-top: 10pt;
+}
+
+.text {
+    flex: 1;
+    font-family: "Teko", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    height: 70px;
+    overflow: hidden;
+    white-space: normal;
+    width: 450px;    
+    text-overflow: ellipsis;
+}
+
+.pagination{
+    margin-top: 20%;
+}

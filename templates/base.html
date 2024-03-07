@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <style>
+            body {
+            background: url("{% static 'main/images/back-site.jpg' %}");
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
+    <link rel="icon" type="text/css" href="{% static 'main/icons/site-icon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    {% block head %}
+    {% endblock %}
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+            <a href="{% url 'main:home' %}" style="color: white">
+                <img src="{% static 'main/icons/house-icon.png' %}" class="icon-header" alt="Home-header">
+                Home
+            </a>
+        </div>
+        <div class="icons-header">
+            <div class="discord-header">
+                <a href="https://discordapp.com/users/328144187809857536/" id="discord" class="icon">
+                    <img src="{% static 'main/icons/discord-icon.png' %}">
+            </div>
+            <div class="telegram-header">
+                <a href="https://t.me/qxzxbtlqq" id="telegram" class="icon">
+                    <img src="{% static 'main/icons/telegram-icon.png' %}">
+            </div>
+            <div class="vk-header">
+                <a href="https://vk.com/xxzxbtl" id="vk" class="icon">
+                    <img src="{% static 'main/icons/vk-icon.png' %}">
+            </div>
+        </div>
+        <div class="buttons-header" id="header-links">
+            <a href="{% url 'todo:todomain' %}" style="color: white;">To-Do</a>
+            <a href="{% url 'weather:index' %}" style="color: white;">Weather</a>
+            <a href="{% if user.is_authenticated %}{% url 'users:logout' %}{% else %}{% url 'users:login' %}{% endif %}" style="color: white;">
+                {% if user.is_authenticated %}
+                    Exit
+                {% else %}
+                    Enter
+                {% endif %}
+            </a>
+            <a href="{% url 'reviews:reviews' %}" style="color: white;">Reviews</a>
+            {% if user.is_authenticated %}
+                    <a href="{% url 'user:profile' %}" style="color: #fff;">Profile</a>
+            {% else %}
+                    <a href="{% url 'user:profile' %}" style="visibility: hidden; color: #fff;">Profile</a>
+            {% endif %}
+            <div class="reviews-menu">
+                <div class="dropdown">
+                    <a href="#" id="menu" class="icon">
+                        <img src="{% static 'main/icons/menu-icon.png' %}" class="menu-header" alt="Menu-header">
+                    </a>
+                    <div class="dropdown-content" id="dropdown-links">
+                        <a href="{% url 'main:about' %}">About</a>
+                        <a href="{% url 'reviews:reviews' %}">Reviews</a>
+                        <a href="{% if user.is_authenticated %}{% url 'users:logout' %}{% else %}{% url 'users:login' %}{% endif %}" style="color: white;">
+                            {% if user.is_authenticated %}
+                                Exit
+                            {% else %}
+                                Enter
+                            {% endif %}
+                        </a>
+                        <a href="{% url 'weather:index' %}">Weather</a>
+                        <a href="{% url 'todo:todomain' %}">To-Do</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'user:profile' %}" style="color: #fff;">Profile</a>
+                        {% else %}
+                            <a href="{% url 'user:profile' %}" style="visibility: hidden; color: #fff;">Profile</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% block content %} {% endblock %}

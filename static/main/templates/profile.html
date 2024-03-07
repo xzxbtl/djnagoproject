@@ -1,0 +1,62 @@
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="block-profile">
+            <h3 class="text-profile-title">User Profile
+                <div class="line-profile"></div>
+            </h3>
+                <form action="{% url 'user:profile' %}" method="post">
+                    {% csrf_token %}
+                    <div class="class-row-container">
+                        <div class="avatar-input">
+                            <img src="{% static 'main/images/baseavatar.jpg' %}"
+                                alt="Аватар пользователя" class="img-fluid rounded-circle"
+                                style="max-width: 150px;">
+                                <label class="input-file">
+                                    <span class="input-file-text">No file selected</span>
+                                    <input type="file" name="file" class="input-file-input" id="avatar" accept="image/*">
+                                    <span class="input-file-btn">Choose file</span>
+                                </label>
+                        </div>
+
+                        <div class="name-input">
+                            <label for="id_name" class="form-label">Name</label>
+                            <input type="text" class="form-control"  id="id_name"
+                                placeholder="Input name" value="{% if form.name.value %}{{ form.name.value }}{% endif %}" required>
+                        </div>
+                        <div class="lastname-input">
+                            <label for="id_lastname" class="form-label">Surname</label>
+                            <input type="text" class="form-control" id="id_lastname"
+                                placeholder="Input surname" value="{% if form.lastname.value %}{{ form.lastname.value }}{% endif %}" required>
+                        </div>
+                        <div class="username-input">
+                            <label for="id_username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="id_username"
+                                placeholder="Input Username" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" required>
+                            {% if form.username.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="email-input">
+                            <label for="id_email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="id_email"
+                                placeholder="Input Email *youremail@example.com" value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
+                                required>
+                            {% if form.email.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <button type="submit" class="button-link-log">Save</button>
+                </form>
+        </div>
+    </main>
+    <script src="{% static 'main/js/file-avatar.js' %}"></script>
+{% endblock %}

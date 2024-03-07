@@ -1,0 +1,136 @@
+body {
+    overflow: hidden;
+}
+
+a, u {
+    text-decoration: none;
+}
+
+.block-authorize {
+    background-color: rgba(242, 242, 242, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 800px;
+    height: 600px;
+    justify-content: space-around;
+    box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
+    margin-top: 6%;
+    margin-left: 26%;
+    transition: 1s;
+}
+
+.block-authorize:hover{
+    transform: scale(1.1);
+}
+
+.form-label {
+    font-family: 'Beer Money', sans-serif;
+    display: grid;
+    color: #437cf8;
+    font-size: 24px;
+    margin-left: 5%;
+    margin-top: -3%;
+}
+
+
+.username-menu, .password-menu {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 5%;
+    margin-top: 5%;
+}
+
+.form-control {
+    height: 20px;
+    width: 400px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    opacity: 0.6;
+}
+
+.button-enter {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(242, 242, 242, 0.1);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-left: 45%;
+    margin-top: 4%;
+    text-decoration: none;
+    font-family: "Teko", sans-serif;
+    font-style:oblique;
+    box-shadow: 0 0 2px 1px #437cf8, 0 0 3px 2px #657dc4; /* Уменьшаем размер тени */
+    transition: 1s;
+}
+.button-enter:hover{
+    transform: scale(1.1);
+}
+
+.button-link-log {
+    appearance: none;
+    margin-left: 10%;
+    border: 0;
+    width: auto;  /* change width to auto so buttons take the necessary width */
+    display: inline-block;  /* display as inline-block to place buttons horizontally */
+    justify-content: space-between;  /* adjust as necessary */
+    border-radius: 5px;
+    background-color: rgba(242, 242, 242, 0.1);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-left: 80pt;  /* add margin between buttons */
+    text-decoration: none;
+    font-family: "Teko", sans-serif;
+    font-style: oblique;
+    box-shadow: 0 0 2px 1px #437cf8, 0 0 3px 2px #657dc4; /* Decrease the size of the shadow */
+    transition: 1s;
+}
+
+.button-link-log:hover{
+    transform: scale(1.1);
+}
+
+.forget-password-menu {
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    justify-content: space-around;
+    margin-top: -4.5%;
+    margin-left: 6%;
+    margin-bottom: 40pt;
+}
+
+.forget-password-menu a{
+    font-family: "Teko", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-style:oblique;
+}
+
+
+.text-authorize {
+    font-family: 'Beer Money', sans-serif;
+    color: #fff;
+    font-size: 46px;
+    margin-left: 34%;
+    margin-top: 2%;
+}
+
+.buttons-auhorize p{
+    font-family: 'Beer Money', sans-serif;
+    font-style:oblique;
+    color: #fff;
+    font-size: 36px;
+    margin-left: 33%;
+    margin-top: 2%;
+    margin-bottom: 50px;
+}
