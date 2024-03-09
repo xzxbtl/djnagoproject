@@ -9,15 +9,13 @@
 
 {% block content %}
     <main>
-            <form action="" method="get">
-                <div class="search-box">
-                    <input type="text" class="input-search" id="searchInput" placeholder="Type to Search...">
-                    <button id="searchBtn" type="submit" style="cursor: pointer; border: none; background: none;">
-                        <img src="{% static 'main/icons/search-icon.png' %}" alt="Search icon" class="search-icon" style="margin-right: 5px;">
-                    </button>
-                </div>
-                <div id="searchResults"></div>
-            </form>
+        <form id="searchForm" method="get" action="{% url 'main:search_results' %}">
+            <div class="search-box">
+                <input type="text" class="input-search" name="q" id="searchInput" placeholder="Type to Search...">
+                <button id="searchBtn" type="submit" style="cursor: pointer; border: none; background: none;">
+                    <img src="{% static 'main/icons/search-icon.png' %}" alt="Search icon" class="search-icon" style="margin-right: 5px;">
+                </button>
+            </div>
+        </form>
     </main>
-    <script src="{% static 'main/js/search.js' %}"></script>
 {% endblock %}

@@ -23,9 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls', namespace='main')),
     path('to-do/', include('todo.urls', namespace='todo')),
-    path('', include('users.urls', namespace='user')),
+    path('', include('users.urls', namespace='users')),
     path('', include('reviews.urls', namespace='review')),
-    path('weather/', include('weather.urls', namespace='weather'))
+    path('weather/', include('weather.urls', namespace='weather')),
+    path('auth/', include('social_django.urls', namespace='social'))
 ]
 
 if settings.DEBUG:

@@ -33,15 +33,15 @@
             <hr>
             <div class="buttons-auhorize">
                 <p>Or login in via:</p>
-                <a href="#" class="button-link-log">
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="button-link-log">
                     <img class="mx-1" src="{% static 'main/svg/google.svg' %}" alt="Catalog Icon" width="16" height="16">
                     <b>Google</b>
                 </a>
-                <a href="#" class="button-link-log">
+                <a href="{% url 'social:begin' 'facebook' %}" class="button-link-log">
                     <img class="mx-1" src="{% static 'main/svg/facebook.svg' %}" alt="Catalog Icon" width="16" height="16">
                     <b>Facebook</b>
                 </a>
-                <a href="#" class="button-link-log">
+                <a href="{% url 'social:begin' 'github' %}" class="button-link-log">
                     <img class="mx-1" src="{% static 'main/svg/github.svg' %}" alt="Catalog Icon" width="16" height="16">
                     <b>GitHub</b>
                 </a>

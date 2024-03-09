@@ -44,9 +44,8 @@ INSTALLED_APPS = [
     'reviews',
     'weather',
 
-    'oauth2_provider',
     'social_django',
-    'rest_framework_social_oauth2',
+
 
     'debug_toolbar',
 ]
@@ -61,6 +60,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "social_django.middleware.SocialAuthExceptionMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = 'sitewithapps.urls'
@@ -76,6 +77,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -154,3 +158,22 @@ INTERNAL_IPS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
+
+# Авторизация через соц сети
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# Гит
+SOCIAL_AUTH_GITHUB_KEY = 'c8002771aab92d7f96bd'
+SOCIAL_AUTH_GITHUB_SECRET = '3085a6deef269ad0b2531669a7a2b58eef617286'
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'main:home'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'users:login'
+
+#Гугл
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '798567976420-h9263slumu1nppq8vrolk8ch0fib8vav.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'

@@ -1,8 +1,9 @@
-from django.urls import path
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
 
-from users import views
+from . import views
 
-app_name = 'users'
+app_name = 'user'
 
 urlpatterns = [
     path('login/', views.login, name='login'),

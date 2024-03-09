@@ -1,7 +1,7 @@
 from django.db import models
 from users.models import User
 from django.db.models import Q
-
+from django.urls import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=150, unique=True, verbose_name='Название')
